@@ -24,7 +24,7 @@
                 code: args.payload.key
             }, function (translation) {
                 self.eventHandler.onMessage(JSON.stringify({
-                    topic: 'A',
+                    topic: args.responseAddress,
                     payload: {
                         subject: 'ok',
                         payload: {
@@ -34,7 +34,7 @@
                 }));
             }, function(reason) {
                 self.eventHandler.onMessage(JSON.stringify({
-                    topic: 'A',
+                    topic: args.responseAddress,
                     payload: {
                         subject: 'error',
                         payload: {
