@@ -52,7 +52,7 @@ describe('sockjs.fallback.over.rest', function () {
                 });
 
                 it('delegates to iorMessageReader', inject(function () {
-                    expect(reader.calls[0].args[0]).toEqual({
+                    expect(reader.calls.first().args[0]).toEqual({
                         namespace: 'N',
                         locale: 'L',
                         code: 'K'
@@ -60,7 +60,7 @@ describe('sockjs.fallback.over.rest', function () {
                 }));
 
                 it('generate success event', function () {
-                    reader.calls[0].args[1]('translation');
+                    reader.calls.first().args[1]('translation');
                     expect(eventHandler.capturedMessages[0]).toEqual({
                         topic: 'A',
                         payload: {
@@ -73,7 +73,7 @@ describe('sockjs.fallback.over.rest', function () {
                 });
 
                 it('generate error event', function () {
-                    reader.calls[0].args[2]('reason');
+                    reader.calls.first().args[2]('reason');
                     expect(eventHandler.capturedMessages[0]).toEqual({
                         topic: 'A',
                         payload: {

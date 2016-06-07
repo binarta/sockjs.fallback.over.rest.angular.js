@@ -1,0 +1,5 @@
+{
+  "default": {
+    "sockjs.fallback.over.rest": "bower_components/binarta.sockjs.fallback.over.rest.angular/src/sockjs.fallback.over.rest.js"
+  }
+}
